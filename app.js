@@ -4,6 +4,7 @@ dotenv.config()
 const connectToDB = require('./config/db')
 connectToDB();
 const cookieParser = require('cookie-parser')
+const port = process.env.PORT || 8080;
 
 const app = express()
 
@@ -17,6 +18,6 @@ app.set('view engine', 'ejs')
 app.use('/user', userRouter)
 app.use('/', indexRouter)
 
-app.listen(3000, () => {
-    console.log('Server is running on port: 3000')
+app.listen(port, () => {
+    console.log(`Server is running on port: ${port}`)
 })
