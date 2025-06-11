@@ -33,6 +33,8 @@ router.post('/register',
         }
 
         const { email, username, password } = req.body;
+        console.log("📥 Register data:", req.body);
+
 
         const hashPassword = await bcrypt.hash(password, 10)
 
